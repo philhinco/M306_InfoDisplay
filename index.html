@@ -1,0 +1,42 @@
+<html >
+    <head>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+        </script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.3.15/angular-route.min.js">
+        </script>
+        
+        </script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="admin-controllers.js"></script>
+        <script type="text/javascript" src="public-controllers.js"></script>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+
+    </head>    
+    <body data-ng-app="infodisplay">
+<ul class="nav nav-tabs">
+            <li role="presentation" id="publictab" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="public_dd" role="button" aria-expanded="false">Öffentlich
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="public_dd">
+                    <li><a href="#/monitors/1">Monitor 1</a></li>
+                    <li><a href="#/monitors/2">Monitor 2</a></li>
+                    <li><a href="#/monitors/3">Monitor 3</a></li>
+                </ul>
+            </li>
+            <li role="presentation" id="admintab" class="active"><a href="#/admin">Admin</a></li>
+        </ul>
+        
+        
+        <div data-ng-view class="infodisplay">
+        
+        </div>        
+
+    </body>
+</html>

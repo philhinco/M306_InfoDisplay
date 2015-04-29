@@ -1,0 +1,20 @@
+<h1>Infodisplay - Administration</h1>
+<h2>{{ monitor.name }} — {{monitor.location}}</h2>
+<hr>
+<div data-ng-show="!monitor.infosAvailable">
+        <div class="alert alert-info  alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Dieser Monitor hat noch keine Informationen, die er anzeigen soll.</strong> .
+        </div>
+</div>
+<div class="panel panel-default" data-ng-repeat="info in monitor.infos">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ info.title }}</h3>
+    </div>
+  <div class="panel-body">
+    <p>{{ info.desc }}</p>
+    <a class="btn btn-primary pull-right" href="#/admin/monitors/{{monitor.id}}/{{info.id}}/edit" role="button">Bearbeiten</a>
+  </div>
+</div>
+<a class="btn btn-primary pull-right" href="#/admin/monitors/{{monitor.id}}/infos/new" role="button">Neu</a>    
+<a class="btn btn-primary pull-left" href="#/admin/monitors" role="button">Zurück</a>

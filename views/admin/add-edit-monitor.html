@@ -1,0 +1,18 @@
+<div data-ng-show="message">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>{{message.text}}</strong> .
+        </div>
+</div>
+<form data-ng-submit="save(monitor)">
+    <div class="form-group">
+        <label for="monitorName">Name:</label>
+        <input class="form-control" id="monitorName" data-ng-model="monitor.name" type="text" placeholder="Name" /><br>
+    </div>
+    <div class="form-group">
+        <label for="monitorLocation">Ort:</label>
+        <input class="form-control" data-ng-model="monitor.location" id="monitorLocation" type="text" placeholder="Ort" /><br>
+    </div>
+    <input type="submit" value="Save" />
+</form>
+<a class="btn btn-primary pull-left" href="#/admin/monitors" role="button">Zurück</a>

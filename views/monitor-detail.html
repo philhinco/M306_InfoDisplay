@@ -1,0 +1,15 @@
+<h1>{{monitor.location}}</h1>
+<hr>
+
+<div data-ng-show="!monitor.infosAvailable">
+        <div class="alert alert-info  alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Dieser Monitor hat noch keine Informationen, die er anzeigen soll.</strong> .
+        </div>
+</div>
+<div class="panel panel-default" data-ng-repeat="info in monitor.infos">
+  <div class="panel-body">
+    <p><h2 style="padding-top: 0; margin-top: 0;">{{ info.title }}</h2></p>
+    <p>{{ info.desc }}</p>
+  </div>
+</div>

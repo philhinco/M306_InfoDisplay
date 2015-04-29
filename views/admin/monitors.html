@@ -1,0 +1,23 @@
+<h1>Infodisplay - Administrationsbereich</h1>
+
+<div data-ng-show="!hasMonitors">
+        <div class="alert alert-info  alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Es wurden noch keine Monitore hinzugefügt. Fügen Sie Monitore hinzu.</strong> .
+        </div>
+</div>
+<div class="panel panel-default" data-ng-repeat="monitor in monitors">
+  <div class="panel-body">
+    <a class="btn btn-primary pull-right" href="#/admin/monitors/{{monitor.id}}/edit" role="button">Bearbeiten</a>
+    <a class="btn btn-primary pull-right" ng-click="delete(monitor.id)" style="margin-right: 10px;" role="button">Löschen</a>
+    <p><a href="#/admin/monitors/{{monitor.id}}"><h2 style="padding-top: 0; margin-top: 0;">{{monitor.name}}</h2></a></p>
+    <p><b>{{ monitor.location }}</b></p>
+    <p><h3>Infos</h3></p>
+    <p data-ng-if="!monitor.infosAvailable">Keine Infos für diesen Monitor vorhanden</p>
+    <ul data-ng-if="monitor.infosAvailable">
+        <li data-ng-repeat="info in monitor.infos"> {{ info.title }}</li>
+    </ul>
+  </div>
+</div>
+<a class="btn btn-primary pull-right" href="#/admin/monitors/new" role="button">Neuer Monitor</a>
+<a class="btn btn-primary pull-left" href="#/admin/monitors/info/new" role="button">Neue Info (für alle)</a>
